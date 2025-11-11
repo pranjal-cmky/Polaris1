@@ -1,0 +1,148 @@
+/* Polaris Browser - Homepage UI Style */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#container {
+  width: 95%;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+header .logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+h1 {
+  font-size: 2.2em;
+  background: linear-gradient(to right, #00d4ff, #06f0c4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  margin: 0;
+}
+
+.search-box {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.search-box input {
+  flex: 1;
+  max-width: 600px;
+  padding: 0.8em 1em;
+  border-radius: 50px;
+  border: none;
+  font-size: 1em;
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  backdrop-filter: blur(8px);
+  box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.search-box input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.search-box button {
+  background: linear-gradient(to right, #00d4ff, #06f0c4);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  font-size: 1.1em;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
+  transition: transform 0.15s ease;
+}
+
+.search-box button:hover {
+  transform: scale(1.1);
+}
+
+.categories {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.categories .tab {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.categories .tab.active,
+.categories .tab:hover {
+  background: linear-gradient(to right, #00d4ff, #06f0c4);
+  color: #000;
+  font-weight: 600;
+}
+
+#results {
+  margin-top: 25px;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+  max-height: 400px;
+  overflow-y: auto;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+#results a {
+  text-decoration: none;
+  color: #00d4ff;
+  font-weight: 600;
+}
+
+#results a:hover {
+  text-decoration: underline;
+}
+
+#results p {
+  margin: 12px 0;
+  font-size: 0.95em;
+  color: #ddd;
+}
+
+footer {
+  margin-top: 30px;
+  font-size: 0.8em;
+  opacity: 0.7;
+}
