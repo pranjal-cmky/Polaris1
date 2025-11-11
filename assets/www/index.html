@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Polaris Browser</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#0fb9b1" />
+  <link rel="icon" href="icons/icon-192.png" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="container">
+    <header>
+      <img src="icons/icon-192.png" alt="Polaris" class="logo" />
+      <h1>Polaris</h1>
+    </header>
+
+    <main>
+      <!-- Search bar -->
+      <div class="search-box">
+        <input id="query" type="text" placeholder="Search the web or type a URL…" autofocus />
+        <button id="searchBtn" title="Search">🔍</button>
+      </div>
+
+      <!-- Category tabs -->
+      <div class="categories">
+        <button class="tab active" data-mode="all">Web</button>
+        <button class="tab" data-mode="images">Images</button>
+        <button class="tab" data-mode="news">News</button>
+        <button class="tab" data-mode="shopping">Shopping</button>
+      </div>
+
+      <!-- Results mount -->
+      <section id="results"></section>
+    </main>
+
+    <footer>
+      <p>© 2025 Polaris • Powered by CSE, Wikipedia, OpenAI, SerpAPI</p>
+    </footer>
+  </div>
+
+  <!-- Set your API base once deployed to Vercel -->
+  <script>
+    // Example: const FN = "https://polaris1.vercel.app/api";
+    // For same-origin (when served by your own Node server), you can leave it blank and main.js will use relative /api paths.
+    const FN = "https://YOUR-PROJECT-NAME.vercel.app/api";
+  </script>
+
+  <!-- App logic -->
+  <script src="js/main.js"></script>
+
+  <!-- Register Service Worker for PWA/offline -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js").catch(() => {});
+    }
+  </script>
+</body>
+</html>
